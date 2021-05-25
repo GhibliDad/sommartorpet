@@ -1,4 +1,5 @@
 class SummerHousesController < ApplicationController
+
   def index
   end
 
@@ -12,5 +13,9 @@ class SummerHousesController < ApplicationController
   end
 
   def destroy
+    @summer_house = SummerHouse.find(params[:id])
+    @summer_house.destroy
+    redirect_to summer_houses_path
   end
+
 end
