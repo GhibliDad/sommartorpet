@@ -1,2 +1,12 @@
-<h1>Kris are you there?</h1>
-<p><%= @summer_house.title %></p>
+<div class="container border d-flex justify-content-left px-5">
+  <div class="row">
+    <div class="col my-5 col-sm">
+      <h1 class="font-weight-bold"><%= @summer_house.title %> </h1>
+      <h2>Description: <%= @summer_house.description %></h2><br>
+      <p>Price: <%= @summer_house.price %></p>
+      <p>Location: <%= @summer_house.location %></p>
+      <p>Capacity: <%= @summer_house.capacity %></p>
+      <p><%= link_to "Delete this house", summer_house_path, method: :delete, class: "btn btn-danger text-white rounded"%></p>
+    </div>
+  </div>
+</div>
