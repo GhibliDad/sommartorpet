@@ -1,0 +1,2 @@
+class SummerHousesController < ApplicationController
+end
