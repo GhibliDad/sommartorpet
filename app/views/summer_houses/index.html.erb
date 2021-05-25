@@ -1,9 +1,16 @@
-<h1>Does this work Kris?</h1>
-<ul>
-  <% @summer_houses.each do |house| %>
-  <li>
-    <%= house.title %><br>
-    <%= house.description %>
-  </li>
-  <% end %>
-</ul>
+<div class="row justify-conten-center">
+  <div class="col-6">
+    <h1>Here are the summer houses available today!</h1>
+    <ul>
+      <% @summer_houses.each do |house| %>
+        <div class="border">
+          <li>
+            <%= house.title %><br>
+            <%= house.description %>
+          </li>
+        </div>
+      <% end %>
+    </ul>
+    <h6><%= link_to "ADD SUMMER HOUSE", new_summer_house_path %></h6>
+  </div>
+</div>
