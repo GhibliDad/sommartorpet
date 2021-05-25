@@ -1,11 +1,13 @@
 class SummerHousesController < ApplicationController
   def index
     @summer_houses = SummerHouse.all
+    @summer_houses = policy_scope(SummerHouse).order(created_at: :desc)
   end
 
   def show
-    @summer_houses = SummerHouse.find(params[:id])
-    @summer_house = SummerHouse.new
+    @summer_house = SummerHouse.find(params[:id])
+    # @summer_house = policy_scope(summer_house)
+    authorize @summer_house
   end
 
   def new
