@@ -1,4 +1,5 @@
 class SummerHousesController < ApplicationController
+
   def index
     @summer_houses = SummerHouse.all
     @summer_houses = policy_scope(SummerHouse).order(created_at: :desc)
@@ -27,6 +28,10 @@ class SummerHousesController < ApplicationController
   end
 
   def destroy
+    @summer_house = SummerHouse.find(params[:id])
+    authorize @summer_house
+    @summer_house.destroy
+    redirect_to summer_houses_path
   end
 
   def summer_house_params
