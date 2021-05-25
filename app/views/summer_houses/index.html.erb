@@ -1,17 +1,18 @@
-<div class="row justify-conten-center">
+<div class="row justify-content-center">
   <div class="col-6">
     <h1>Here are the summer houses available today!</h1>
     <ul>
       <% @summer_houses.each do |house| %>
-        <div class="border">
-          <li>
+        <li>
+          <%= link_to summer_house_path(house) do %>
+          <div class="border">
             <%= house.title %><br>
             <%= house.description %>
-          </li>
-        </div>
+          </div>
+          <% end %>
+        </li>
       <% end %>
     </ul>
-    <h6><%= link_to "ADD SUMMER HOUSE", new_summer_house_path %></h6>
+    <h6><%= link_to "ADD SUMMER HOUSE", new_summer_house_path, class: "btn btn-primary text-white rounded"%></h6>
   </div>
 </div>
-
