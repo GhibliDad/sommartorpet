@@ -1,9 +1,14 @@
-<h1> HEJ </h1>
-<%= simple_form_for @summer_house do |f| %>
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :price %>
-<%= f.input :location %>
-<%= f.input :capacity %>
-<%= f.submit %>
-<% end %>
+<div class="row justify-content-center">
+  <div class="col-6">
+    <h2>Create a new summer house</h2>
+      <%= simple_form_for @summer_house do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :location %>
+      <%= f.input :capacity %>
+      <%= f.submit 'Create Summer House', class: 'btn btn-primary' %>
+      <%= link_to 'Go back', root_path, class: 'btn btn-outline-primary' %>
+    <% end %>
+  </div>
+</div>
