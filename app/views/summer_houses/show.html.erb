@@ -1,5 +1,5 @@
 <div class="container border d-flex justify-content-left px-5">
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="col my-5 col-sm">
       <h1 class="font-weight-bold"><%= @summer_house.title %> </h1>
       <h2>Description: <%= @summer_house.description %></h2><br>
@@ -7,6 +7,8 @@
       <p>Location: <%= @summer_house.location %></p>
       <p>Capacity: <%= @summer_house.capacity %></p>
       <p><%= link_to "Delete this house", root_path, method: :delete, class: "btn btn-danger text-white rounded"%></p>
+      <p><%= link_to "Book this house!", summer_house_path, method: :delete, class: "btn btn-primary text-white rounded"%></p>
+      <p><%= link_to "Go back", root_path, class: "btn btn-outline-primary" %></p>
     </div>
   </div>
 </div>
