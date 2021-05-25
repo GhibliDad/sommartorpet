@@ -4,4 +4,7 @@ class SummerHousesController < ApplicationController
 
   def create
   end
+
+  def destroy
+  end
 end
