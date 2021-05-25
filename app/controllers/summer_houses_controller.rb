@@ -31,7 +31,7 @@ class SummerHousesController < ApplicationController
     @summer_house = SummerHouse.find(params[:id])
     authorize @summer_house
     @summer_house.destroy
-    redirect_to summer_houses_path
+    redirect_to root_path
   end
 
   def summer_house_params
