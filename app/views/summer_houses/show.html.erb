@@ -2,6 +2,7 @@
   <div class="row justify-content-center">
     <div class="col my-5 col-sm">
       <h1 class="font-weight-bold"><%= @summer_house.title %> </h1>
+      <%= cl_image_tag @summer_house.photo.key, height: 300, width: 400, crop: :fill %>
       <h2>Description: <%= @summer_house.description %></h2><br>
       <p>Price: <%= @summer_house.price %></p>
       <p>Location: <%= @summer_house.location %></p>
