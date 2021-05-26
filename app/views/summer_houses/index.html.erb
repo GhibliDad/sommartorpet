@@ -6,8 +6,9 @@
         <li>
           <%= link_to summer_house_path(house) do %>
           <div class="border">
-            <%= house.title %><br>
-            <%= house.description %>
+            <%= cl_image_tag house.photo.key, height: 300, width: 400, crop: :fill %>
+            <p><%= house.title %></p>
+            <p><%= house.description %></p>
           </div>
           <% end %>
         </li>
