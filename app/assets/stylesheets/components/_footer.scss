@@ -4,14 +4,19 @@
   align-items: center;
   justify-content: space-between;
   bottom: 0;
-  height: 100px;
+  height: 80px;
   margin-top: 48px;
   padding: 0px 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   color: white;
 }
-.footer-logo {
+.footer-logo img {
   display: flex;
+  width: 208px;
   align-items: center;
+  // opacity: 0.15;
 }
 .footer-links a {
   color: white;
@@ -23,6 +28,11 @@
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
-  color: #D23333;
+
+// .footer-logo img:hover {
+//     opacity: 1;
+// }
+
+footer {
+
 }
