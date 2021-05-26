@@ -7,7 +7,7 @@
       <p>Location: <%= @summer_house.location %></p>
       <p>Capacity: <%= @summer_house.capacity %></p>
       <p><%= link_to "Delete this house", summer_house_path, method: :delete, class: "btn btn-danger text-white rounded"%></p>
-      <p><%= link_to "Book this house!", summer_house_path, method: :delete, class: "btn btn-primary text-white rounded"%></p>
+      <p><%= link_to "Book this house!", new_summer_house_booking_path(@summer_house), class: "btn btn-primary text-white rounded"%></p>
       <p><%= link_to "Go back", root_path, class: "btn btn-outline-primary" %></p>
     </div>
   </div>

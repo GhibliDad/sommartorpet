@@ -1,9 +1,10 @@
 <div class="row">
   <div class="col-6">
     <div class="card">
-      <h2><%= @booking.summerhouse.title %></h2>
+      <h2><%= @booking.summer_house.title %></h2>
       <p><%= @booking.booking_start %> - <%= @booking.booking_end %></p>
-      <%= link_to 'My bookings', root_path %>
+      <%= link_to "Delete booking", booking_path(@booking), method: :delete, class: "btn btn-danger text-white rounded" %>
+      <%= link_to 'Go back', root_path, class: 'btn btn-outline-primary' %>
     </div>
   </div>
 </div>
