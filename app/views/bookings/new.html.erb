@@ -1,0 +1,11 @@
+<div class="row justify-content-center">
+  <div class="col-6">
+    <h2>Book a new summer house</h2>
+      <%= simple_form_for([@summer_house, @booking]) do |f| %>
+      <%= f.input :booking_start, as: :date %>
+      <%= f.input :booking_end, as: :date %>
+      <%= f.submit 'Book!', class: 'btn btn-primary' %>
+      <%= link_to 'Go back', root_path, class: 'btn btn-outline-primary' %>
+    <% end %>
+  </div>
+</div>
