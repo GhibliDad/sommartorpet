@@ -35,6 +35,6 @@ class SummerHousesController < ApplicationController
   end
 
   def summer_house_params
-    params.require(:summer_house).permit(:title, :description, :price, :location, :capacity)
+    params.require(:summer_house).permit(:title, :description, :price, :location, :capacity, :photo)
   end
 end
