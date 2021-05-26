@@ -1,15 +1,18 @@
-<div class="container border d-flex justify-content-left px-5">
-  <div class="row justify-content-center">
-    <div class="col my-5 col-sm">
-      <h1 class="font-weight-bold"><%= @summer_house.title %> </h1>
-      <%= cl_image_tag @summer_house.photo.key, height: 300, width: 400, crop: :fill %>
-      <h2>Description: <%= @summer_house.description %></h2><br>
-      <p>Price: <%= @summer_house.price %></p>
-      <p>Location: <%= @summer_house.location %></p>
-      <p>Capacity: <%= @summer_house.capacity %></p>
-      <p><%= link_to "Delete this house", summer_house_path, method: :delete, class: "btn btn-danger text-white rounded"%></p>
-      <p><%= link_to "Book this house!", new_summer_house_booking_path(@summer_house), class: "btn btn-primary text-white rounded"%></p>
-      <p><%= link_to "Go back", root_path, class: "btn btn-outline-primary" %></p>
+<div class="img-fluid max-width: 100% height: auto"><%= cl_image_tag @summer_house.photo.key, crop: :fill %></div>
+<div class="container d-flex justify-content-left px-5">
+  <div class="row justify-content-left">
+    <div class="col my-5 col-sm text-left">
+      <h1 class="font-weight-medium"><%= @summer_house.title %> </h1>
+      <h2><%= @summer_house.description %></h2><br>
+      <p><strong>Price:</strong> <%= @summer_house.price %></p>
+      <p><strong>Location:</strong> <%= @summer_house.location %></p>
+      <p><strong>Capacity:</strong> <%= @summer_house.capacity %></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!</p>
+      <div class="d-flex flex-row mt-4">
+        <p class="align-items-start mr-2"><%= link_to "Book this house!", new_summer_house_booking_path(@summer_house), class: "btn btn-warning text-white rounded p-3"%></p>
+        <p class="align-items-end"><%= link_to "Delete this house", summer_house_path, method: :delete, class: "btn btn-danger text-white rounded p-3"%></p>
+      </div>
+              <p><%= link_to "Go back", root_path, class: "btn btn-outline-warning rounded p-3 w-100" %></p>
     </div>
   </div>
 </div>
