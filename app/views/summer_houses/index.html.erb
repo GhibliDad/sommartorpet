@@ -1,19 +1,42 @@
-<div class="row justify-content-center">
-  <div class="col-6">
-    <h1>Here are the summer houses available today!</h1>
-    <ul>
-      <% @summer_houses.each do |house| %>
-        <li>
-          <%= link_to summer_house_path(house) do %>
-          <div class="border">
-            <%= cl_image_tag house.photo.key, height: 300, width: 400, crop: :fill %>
-            <p><%= house.title %></p>
-            <p><%= house.description %></p>
-          </div>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
-    <h6><%= link_to "ADD SUMMER HOUSE", new_summer_house_path, class: "btn btn-primary text-white rounded"%></h6>
+<div class="row justify-content-between align-items-center banner">
+  <div class="col-4">
+    <div class="mx-4">
+      <h1 class="text-warning">Dream summer house?</h1>
+      <h1>We got it! See our listing below</h1>
+      <div class="text-center pt-4">
+      <%= link_to "Add a house", new_summer_house_path, class: 'btn btn-outline-warning w-100' %>
+      </div>
+    </div>
   </div>
-</div>
+  <div class="col-8">
+    <%= cl_image_tag ("Mask_Group_esdgbh.png") %>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <h2> See our current listings</h2>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <% @summer_houses.each do |house| %>
+        <div class="col-4">
+          <div class="card-trip">
+            <%= cl_image_tag house.photo.key%>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= house.title %></h2>
+                <p><%= house.description %></p>
+              </div>
+              <h2 class="card-trip-pricing">£99.99</h2>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row my-5">
+      <div class="col-12">
+       <%= link_to "See more", new_summer_house_path, class: "btn btn-outline-warning rounded"%>
+      </div>
+    </div>
+  </div>
+
