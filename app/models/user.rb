@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :summer_houses
   has_many :bookings
+  has_one_attached :photo
 end

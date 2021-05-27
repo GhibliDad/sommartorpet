@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show, :destroy]
   # route for user show page
-  get "users/:id", to: "users#show"
+  get "users/:id", to: "users#show", as: :user
 end
