@@ -14,7 +14,7 @@
           <%= submit_tag "Search", class: "btn btn-outline-warning rounded w-100" %>
         <% end %>
       </div>
-      <h2>Want to add your summer house?</h2>
+      <h2 class="text-warning text-left mt-4">Want to add your summer house?</h2>
       <%= link_to "Add a house", new_summer_house_path, class: 'btn btn-outline-warning w-100' %>
       </div>
     </div>
@@ -52,23 +52,3 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="row mt-4">
-      <% @summer_houses.each do |house| %>
-        <div class="col-4">
-          <%= link_to summer_house_path(house), { class: 'text-decoration-none'} do %>
-            <div class="card-trip">
-              <%= cl_image_tag house.photo.key%>
-              <div class="card-trip-infos">
-                <div class="text-left">
-                  <h2 class="mb-2"><%= house.title.capitalize %></h2>
-                  <p class="text-dark"><%= house.description %></p>
-                </div>
-                <h4 class="card-trip-pricing text-warning"><%= house.price %> €</h4>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
- -->
