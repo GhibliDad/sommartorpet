@@ -5,10 +5,19 @@ h1 {
 }
 
 h2 {
-  color: #EE9327;
+  color: rgb(30,30,30); // #EE9327
 }
 
 p {
   font-size: 24px;
   line-height: 1.1;
+}
+
+.btn-group {
+  position: absolute;
+  bottom: 10px;
+}
+
+.info-col {
+  position: relative;
 }

@@ -2,35 +2,37 @@
   <div class="col-4">
     <div class="mx-4">
       <h1 class="text-warning">Dream summer house?</h1>
-      <h1>We got it! See our listing below</h1>
+      <h1>We got it! See our listings below</h1>
       <div class="text-center pt-4">
       <%= link_to "Add a house", new_summer_house_path, class: 'btn btn-outline-warning w-100' %>
       </div>
     </div>
   </div>
-  <div class="col-8">
-    <%= cl_image_tag ("Mask_Group_esdgbh.png") %>
+  <div class="col-8" style="overflow: hidden;">
+    <%= cl_image_tag ("Mask_Group_esdgbh.png")%>
   </div>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12">
-        <h2> See our current listings</h2>
+        <h2 class="m-5"> See our current listings</h2>
       </div>
     </div>
-    <div class="row mt-4">
+    <div class="cards ">
       <% @summer_houses.each do |house| %>
-        <div class="col-4">
-          <div class="card-trip">
-            <%= cl_image_tag house.photo.key%>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= house.title %></h2>
-                <p><%= house.description %></p>
+          <%= link_to summer_house_path(house), { class: 'text-decoration-none'} do %>
+            <div class="card-trip">
+              <%= cl_image_tag house.photo.key%>
+              <div class="card-trip-infos pb-2">
+                <div class="d-flex justify-content-between">
+                  <h2 class="mb-2"><%= house.title.capitalize %></h2>
+                  <h4 class="card-trip-pricing text-warning"><%= house.price %> €</h4>
+                </div>
+                <div class="card-description">
+                  <p class="pb-2"><%= house.description %></p>
+                </div>
               </div>
-              <h2 class="card-trip-pricing">£99.99</h2>
-              </div>
-          </div>
-        </div>
+            </div>
+          <% end %>
       <% end %>
     </div>
     <div class="row my-5">
@@ -40,3 +42,22 @@
     </div>
   </div>
 
+  <!-- <div class="row mt-4">
+      <% @summer_houses.each do |house| %>
+        <div class="col-4">
+          <%= link_to summer_house_path(house), { class: 'text-decoration-none'} do %>
+            <div class="card-trip">
+              <%= cl_image_tag house.photo.key%>
+              <div class="card-trip-infos">
+                <div class="text-left">
+                  <h2 class="mb-2"><%= house.title.capitalize %></h2>
+                  <p class="text-dark"><%= house.description %></p>
+                </div>
+                <h4 class="card-trip-pricing text-warning"><%= house.price %> €</h4>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+ -->
