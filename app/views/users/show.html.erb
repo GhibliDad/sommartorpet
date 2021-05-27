@@ -4,7 +4,7 @@
       <div class="p-5 border card">
         <%= cl_image_tag("Mask_Group_1_agdpry", width: 170, height: 170) %>
         <div class="mt-3">
-          <%= simple_form_for(current_user) do |f| %>
+          <%= simple_form_for(current_user, method: :patch, url: user_path) do |f| %>
             <%= f.input :first_name %>
             <%= f.input :last_name %>
             <%= f.input :photo, as: :file %>
