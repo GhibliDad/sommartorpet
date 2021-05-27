@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:show, :destroy]
   # route for user show page
   get "users/:id", to: "users#show", as: :user
+  get "users/:id/edit", to: "users#edit", as: :edit_user
+  patch "users/:id", to: "users#update"
 end

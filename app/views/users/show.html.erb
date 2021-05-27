@@ -10,7 +10,7 @@
           <% end %>
         </div>
         <div class="mt-3">
-          <%= simple_form_for(current_user) do |f| %>
+          <%= simple_form_for(current_user, method: :patch, url: user_path) do |f| %>
             <%= f.input :first_name %>
             <%= f.input :last_name %>
             <%= f.input :bio, as: :text %>
