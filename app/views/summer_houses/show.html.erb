@@ -1,20 +1,26 @@
-<div class="img-fluid max-width: 100% height: auto" style="overflow: hidden;"><%= cl_image_tag @summer_house.photo.key, width: 1440, height: 600, crop: :fill %></div>
-<div class="container d-flex justify-content-left px-5">
-  <div class="row justify-content-left my-5">
-    <div class="col-4 text-left info-col">
-      <h1 class="font-weight-medium"><%= @summer_house.title %> </h1>
-      <p><strong>Price:</strong> <%= @summer_house.price %></p>
-      <p><strong>city:</strong> <%= @summer_house.city %></p>
-      <p><strong>Capacity:</strong> <%= @summer_house.capacity %></p>
-      <div class="d-inline-flex flex-row mt-4 btn-group">
-        <p class="align-items-start mr-2"><%= link_to "Book this house!", new_summer_house_booking_path(@summer_house), class: "btn btn-warning text-white rounded p-3"%></p>
-        <p class="align-items-end"><%= link_to "Delete this house", summer_house_path, method: :delete, class: "btn btn-danger text-white rounded p-3"%></p>
+<div class="img-fluid max-width: 100% height: auto" style="overflow: hidden;">
+  <%= cl_image_tag @summer_house.photo.key, width: 1440, height: 600, crop: :fill %>
+  </div>
+  <div class="container px-5">
+    <div class="row justify-content-between my-5">
+      <div class="col-4 text-left info-col d-flex flex-column">
+        <h1><%= @summer_house.title %> </h1>
+        <p><strong>Price:</strong> <%= @summer_house.price %></p>
+        <p><strong>Location:</strong> <%= @summer_house.location %></p>
+        <p><strong>Capacity:</strong> <%= @summer_house.capacity %></p>
+        <div class="mt-auto row">
+          <div class="col-12 d-flex">
+          <p class="mr-2"><%= link_to "Book this house!", new_summer_house_booking_path(@summer_house), class: "btn btn-warning text-white rounded p-3"%></p>
+          <p class=""><%= link_to "Delete this house", summer_house_path, method: :delete, class: "btn btn-danger text-white rounded p-3"%></p>
+          </div>
+          <div class="col-12">
+            <%= link_to "Go back", root_path, class: "btn btn-outline-warning rounded p-3 w-100" %>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-8 text-left">
-      <p class="px-3"><%= @summer_house.description %></p><br>
-    </div>
-      <div class="col-4"><%= link_to "Go back", root_path, class: "btn btn-outline-warning rounded p-3 w-100" %></div>
+      <div class="col-8 text-left">
+        <p class="px-3"><%= @summer_house.description %></p><br>
+      </div>
     </div>
   </div>
   <div id="map"
