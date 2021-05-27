@@ -13,6 +13,12 @@ class SummerHousesController < ApplicationController
     @summer_house = SummerHouse.find(params[:id])
     # @summer_house = policy_scope(summer_house)
     authorize @summer_house
+    @markers = @summer_houses.geocoded.map do |house|
+      {
+        lat: house.latitude,
+        lng: house.longitude
+      }
+    end
   end
 
   def new
@@ -39,6 +45,6 @@ class SummerHousesController < ApplicationController
   end
 
   def summer_house_params
-    params.require(:summer_house).permit(:title, :description, :price, :location, :capacity, :photo)
+    params.require(:summer_house).permit(:title, :description, :address, :price, :city, :capacity, :photo)
   end
 end
