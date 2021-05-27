@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
     # @summer_house = @booking.summer_house
     # @user = @booking.user
     @booking.destroy
-    redirect_to root_path
+    redirect_to user_path(current_user)
   end
 
   private
