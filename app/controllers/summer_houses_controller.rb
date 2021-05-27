@@ -1,8 +1,12 @@
 class SummerHousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @summer_houses = SummerHouse.all
-    @summer_houses = policy_scope(SummerHouse).order(created_at: :desc)
+    if params[:query].present?
+      @summer_houses = SummerHouse.search_by_title_and_description(params[:query])
+      policy_scope(@summer_houses).order(created_at: :desc)
+    else
+      @summer_houses = policy_scope(SummerHouse).order(created_at: :desc)
+    end
   end
 
   def show

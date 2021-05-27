@@ -4,6 +4,17 @@
       <h1 class="text-warning">Dream summer house?</h1>
       <h1>We got it! See our listings below</h1>
       <div class="text-center pt-4">
+      <div>
+        <%= form_tag root_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a summer house!"
+          %>
+          <%= submit_tag "Search", class: "btn btn-outline-warning rounded w-100" %>
+        <% end %>
+      </div>
+      <h2>Want to add your summer house?</h2>
       <%= link_to "Add a house", new_summer_house_path, class: 'btn btn-outline-warning w-100' %>
       </div>
     </div>
