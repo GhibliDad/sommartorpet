@@ -13,11 +13,11 @@ class SummerHousesController < ApplicationController
     @summer_house = SummerHouse.find(params[:id])
     # @summer_house = policy_scope(summer_house)
     authorize @summer_house
-    @markers = @summer_houses.geocoded.map do |house|
-      {
-        lat: house.latitude,
-        lng: house.longitude
-      }
+    if @summer_house.latitude && @summer_house.longitude
+      @markers = [{
+          lat: @summer_house.latitude,
+          lng: @summer_house.longitude
+        }]
     end
   end
 
