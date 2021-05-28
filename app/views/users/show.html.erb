@@ -33,12 +33,20 @@
                     <div class="card-product-infos">
                       <div class="d-flex justify-content-between">
                         <h2><%= booking.summer_house.title %></h2>
-                        <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} do %>
-                        <i class="fas fa-times text-warning"></i>
+                        <% link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} do %>
+                          <i class="fas fa-times text-warning"></i>
                         <% end %>
                       </div>
                       <p><strong>Date:</strong> <%= booking.booking_start.to_date %> - <%= booking.booking_end.to_date %></p>
-                      <p><strong>Booking status: </strong><%= booking.status.capitalize %></p>
+                      <p class="d-inline"><strong>Booking status: </strong></p>
+                        <% if booking.status == 'accepted' %>
+                          <p class="text-success d-inline"><%= booking.status.capitalize %></p>
+                        <% elsif booking.status == 'declined' %>
+                          <p class="text-danger d-inline"><%= booking.status.capitalize %></p>
+                        <% else %>
+                          <p class="text-dark d-inline"><%= booking.status.capitalize %></p>
+                        <% end %>
+                      </p>
                     </div>
                   </div>
                 </li>
@@ -50,7 +58,7 @@
       <div class="row">
         <div class="col-12">
           <div class="summer-houses p-3 mb-3">
-            <h2>Guest Bookings </h2>
+            <h2>My Summer Houses</h2>
             <ul class="list-unstyled">
               <% @summer_houses.each do |house| %>
                 <li class="my-2">
@@ -64,8 +72,8 @@
                         <p><strong>Date:</strong> <%= booking.booking_start.to_date %> - <%= booking.booking_end.to_date %></p>
                         <% if booking.status == "pending" %>
                           <div>
-                            <%= link_to "Accept", booking_path(booking, query: "accept"), method: :put %>
-                            <%= link_to "Decline", booking_path(booking, query: "decline"), method: :put %>
+                            <%= link_to "Accept", booking_path(booking, query: "accept"), method: :put, class: 'btn btn-sm btn-warning' %>
+                            <%= link_to "Decline", booking_path(booking, query: "decline"), method: :put, class: 'btn btn-sm btn-danger' %>
                           </div>
                         <% end %>
                       </div>
