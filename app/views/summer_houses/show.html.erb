@@ -11,8 +11,7 @@
         <div class="mt-auto row">
           <% if current_user == @summer_house.user %>
             <div class="col-12 d-flex">
-              <p class="mr-2"><%= link_to "Book this house!", new_summer_house_booking_path(@summer_house), class: "btn btn-warning text-white rounded p-3"%></p>
-              <p class=""><%= link_to "Delete this house", summer_house_path, method: :delete, class: "btn btn-danger text-white rounded p-3"%></p>
+              <p class="flex-grow-1"><%= link_to "Delete this house", summer_house_path, method: :delete, class: "btn btn-danger text-white rounded p-3 w-100"%></p>
             </div>
           <% else %>
             <div class="col-12 d-flex">
