@@ -1,12 +1,12 @@
-<div class="img-fluid max-width: 100% height: auto" style="overflow: hidden;"><%= cl_image_tag(@booking.summer_house.photo.key, width: 1440, height: 600, crop: :fill) %></div>
-<div class="form-container mt-5">
+<div class="img-fluid height: auto" style="overflow: hidden;"><%= cl_image_tag(@booking.summer_house.photo.key, width: 1440, height: 600, crop: :fill) %></div>
+<div class="form-container my-5">
   <div class="container d-flex justify-content-center">
-    <div class="col-4 text-center">
+    <div class="col-6 text-center">
       <h2><%= @booking.summer_house.title %></h2>
-      <h2 class="text-warning">Booked!</h2>
+      <h2 class="text-warning">Your booking is being processed!</h2>
       <p class="my-5">From: <%= @booking.booking_start.to_date %> <br> To: <%= @booking.booking_end.to_date %></p>
       <%= link_to 'Go back', root_path, class: 'btn btn-outline-warning w-100' %>
-      <%= link_to "Delete booking", booking_path(@booking), method: :delete, class: "btn btn-danger text-white rounded w-100 my-3" %>
+      <% link_to "Delete booking", booking_path(@booking), method: :delete, class: "btn btn-danger text-white rounded w-100 my-3" %>
     </div>
   </div>
 </div>
