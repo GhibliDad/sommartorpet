@@ -39,7 +39,7 @@
                   <h4 class="card-trip-pricing text-warning"><%= house.price %> €</h4>
                 </div>
                 <div class="card-description">
-                  <p class="pb-2"><%= house.description %></p>
+                  <p class="pb-2"><%= house.description.truncate(150) %></p>
                 </div>
               </div>
             </div>
