@@ -117,8 +117,11 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: start;
-  overflow: scroll;
+  // overflow: scroll;
   border-radius: 8px;
+  padding: 0;
+  margin-bottom: 16px;
+
 }
 
 .card-product img {

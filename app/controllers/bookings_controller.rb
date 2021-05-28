@@ -16,11 +16,25 @@ class BookingsController < ApplicationController
     @booking.summer_house = @summer_house
     @booking.user = current_user
     authorize @booking
+    @booking.status = "pending"
     if @booking.save
       redirect_to booking_path(@booking)
     else
       render :new
     end
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if params[:query] == "accept"
+      @booking.status = "accepted"
+      @booking.save
+    else
+      @booking.status = "declined"
+      @booking.save
+    end
+    redirect_to user_path(@booking.summer_house.user)
   end
 
   def destroy
@@ -35,6 +49,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:booking_start, :booking_end)
+    params.require(:booking).permit(:booking_start, :booking_end, :status)
   end
 end

@@ -13,6 +13,11 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    true
+  end
+
+
   def destroy?
     record.summer_house.user == user
   end
