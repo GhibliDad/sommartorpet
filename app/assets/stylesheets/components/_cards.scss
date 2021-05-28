@@ -48,7 +48,7 @@
   background: white;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
-  border: 1px solid #3C5757;
+  border: 1px solid #C0C0C0;
 }
 
 .card-trip > img {
@@ -71,6 +71,11 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  height: 100%;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card-trip .card-trip-infos {
@@ -96,7 +101,11 @@
   text-align: left;
   color: rgb(30,30,30);
   height: 50%;
-  overflow-y: hidden;
+  padding-bottom: 10px;
+  width: 300px;
+  // white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
   // text-overflow: ellipsis; This is not working, whyyy??
 }
 

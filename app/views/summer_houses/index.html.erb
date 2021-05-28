@@ -11,11 +11,11 @@
             class: "form-control",
             placeholder: "Find a summer house!"
           %>
-          <%= submit_tag "Search", class: "btn btn-outline-warning rounded w-100" %>
+          <%= submit_tag "Search", class: "btn btn-outline-warning rounded w-100 mt-3" %>
         <% end %>
       </div>
-      <h2 class="text-warning text-left mt-4">Want to add your summer house?</h2>
-      <%= link_to "Add a house", new_summer_house_path, class: 'btn btn-outline-warning w-100' %>
+      <h1 class="text-left pt-5">Want to add your summer house?</h1>
+      <%= link_to "Add a house", new_summer_house_path, class: 'btn btn-outline-warning w-100 mt-3' %>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@
         <h2 class="m-5"> See our current listings</h2>
       </div>
     </div>
-    <div class="cards ">
+    <div class="cards mb-5">
       <% @summer_houses.each do |house| %>
           <%= link_to summer_house_path(house), { class: 'text-decoration-none'} do %>
             <div class="card-trip">
@@ -45,10 +45,5 @@
             </div>
           <% end %>
       <% end %>
-    </div>
-    <div class="row my-5">
-      <div class="col-12">
-       <%= link_to "See more", new_summer_house_path, class: "btn btn-outline-warning rounded"%>
-      </div>
     </div>
   </div>
