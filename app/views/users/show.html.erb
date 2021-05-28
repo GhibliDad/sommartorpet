@@ -38,6 +38,7 @@
                         <% end %>
                       </div>
                       <p><strong>Date:</strong> <%= booking.booking_start.to_date %> - <%= booking.booking_end.to_date %></p>
+                      <p><strong>Booking status: </strong><%= booking.status.capitalize %></p>
                     </div>
                   </div>
                 </li>
@@ -61,8 +62,11 @@
                       <div class="d-flex justify-content-between">
                         <p><strong>Guest:</strong> <%= booking.user.email %></p>
                         <p><strong>Date:</strong> <%= booking.booking_start.to_date %> - <%= booking.booking_end.to_date %></p>
-                        <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} do %>
-                        <i class="fas fa-times text-warning"></i>
+                        <% if booking.status == "pending" %>
+                          <div>
+                            <%= link_to "Accept", booking_path(booking, query: "accept"), method: :put %>
+                            <%= link_to "Decline", booking_path(booking, query: "decline"), method: :put %>
+                          </div>
                         <% end %>
                       </div>
                       <% end %>
