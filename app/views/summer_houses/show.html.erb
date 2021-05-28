@@ -9,10 +9,16 @@
         <p><strong>Location:</strong> <%= @summer_house.city %></p>
         <p><strong>Capacity:</strong> <%= @summer_house.capacity %></p>
         <div class="mt-auto row">
-          <div class="col-12 d-flex">
-          <p class="mr-2"><%= link_to "Book this house!", new_summer_house_booking_path(@summer_house), class: "btn btn-warning text-white rounded p-3"%></p>
-          <p class=""><%= link_to "Delete this house", summer_house_path, method: :delete, class: "btn btn-danger text-white rounded p-3"%></p>
-          </div>
+          <% if current_user == @summer_house.user %>
+            <div class="col-12 d-flex">
+              <p class="mr-2"><%= link_to "Book this house!", new_summer_house_booking_path(@summer_house), class: "btn btn-warning text-white rounded p-3"%></p>
+              <p class=""><%= link_to "Delete this house", summer_house_path, method: :delete, class: "btn btn-danger text-white rounded p-3"%></p>
+            </div>
+          <% else %>
+            <div class="col-12 d-flex">
+              <p class="flex-grow-1"><%= link_to "Book this house!", new_summer_house_booking_path(@summer_house), class: "btn btn-warning text-white rounded p-3 w-100"%></p>
+            </div>
+          <% end %>
           <div class="col-12">
             <%= link_to "Go back", root_path, class: "btn btn-outline-warning rounded p-3 w-100" %>
           </div>
