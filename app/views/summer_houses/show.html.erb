@@ -5,9 +5,9 @@
     <div class="row justify-content-between my-5">
       <div class="col-4 text-left info-col d-flex flex-column">
         <h1><%= @summer_house.title %> </h1>
-        <p class="mt-3"><strong>Price:</strong> <%= @summer_house.price %></p>
+        <p class="mt-3"><strong>Price:</strong> <%= @summer_house.price %>€</p>
         <p><strong>Location:</strong> <%= @summer_house.city %></p>
-        <p><strong>Capacity:</strong> <%= @summer_house.capacity %></p>
+        <p><strong>Capacity:</strong> <%= @summer_house.capacity %> people</p>
         <div class="mt-auto row">
           <% if current_user == @summer_house.user %>
             <div class="col-12 d-flex">
@@ -24,8 +24,10 @@
           </div>
         </div>
       </div>
-      <div class="col-6 text-left d-flex">
-        <p class="px-3"><%= @summer_house.description %></p><br>
+      <div class="col-8 text-left d-flex" id="text-flow">
+        <div style="column-width: 250px">
+          <p class="px-3"><%= @summer_house.description %></p><br>
+        </div>
       </div>
     </div>
     <% if @markers %>
