@@ -4,7 +4,7 @@
       <div class="p-5 border card">
         <div class="m-auto">
           <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, width: 170, height: 170, radius: "max" %>
+            <%= cl_image_tag current_user.photo.key, width: 170, height: 170, crop: :fill, radius: "max" %>
           <% else %>
             <%= cl_image_tag("Mask_Group_1_agdpry", width: 170, height: 170) %>
           <% end %>
