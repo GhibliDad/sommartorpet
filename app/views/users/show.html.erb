@@ -68,7 +68,10 @@
                       <h2><%= house.title %></h2>
                       <% house.bookings.each do |booking| %>
                       <div class="d-flex justify-content-between align-items-center">
-                        <p><strong>Guest:</strong> <%= booking.user.email %>  |  <strong>Date:</strong> <%= booking.booking_start.to_date %> - <%= booking.booking_end.to_date %></p>
+                        <p>
+                          <strong>Guest:</strong> <%= booking.user.email %>  |
+                          <strong>Date:</strong> <%= booking.booking_start.to_date %> - <%= booking.booking_end.to_date %>
+                        </p>
                         <% if booking.status == "pending" %>
                           <div>
                             <%= link_to "Accept", booking_path(booking, query: "accept"), method: :put, class: 'btn btn-sm btn-warning' %>
