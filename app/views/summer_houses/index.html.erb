@@ -1,8 +1,8 @@
-<div class="row justify-content-between align-items-center banner">
-  <div class="col-4">
-    <div class="mx-4">
+<div class="row justify-content-center align-items-center home-banner">
+  <div class="col-11 col-md-8 col-lg-4">
+    <div class="m-5">
       <h1 class="text-warning">Dream summer house?</h1>
-      <h1>We got it! See our listings below</h1>
+      <h2>We got it! See our listings below</h2>
       <div class="text-center pt-4">
       <div>
         <%= form_tag root_path, method: :get do %>
@@ -14,14 +14,15 @@
           <%= submit_tag "Search", class: "btn btn-outline-warning rounded w-100 mt-3" %>
         <% end %>
       </div>
-      <h1 class="text-left pt-5">Want to add your summer house?</h1>
+      <h2 class="text-left pt-5">Want to add your summer house?</h2>
       <%= link_to "Add a house", new_summer_house_path, class: 'btn btn-outline-warning w-100 mt-3' %>
       </div>
     </div>
   </div>
   <div class="col-8" style="overflow: hidden;">
-    <%= cl_image_tag ("Mask_Group_esdgbh.png")%>
+    <%= cl_image_tag ("Mask_Group_esdgbh.png"), class: 'home-banner-img'%>
   </div>
+</div>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12">

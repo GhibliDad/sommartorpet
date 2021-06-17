@@ -4,6 +4,36 @@
   margin: 0 auto;
 }
 
+.show-img {
+  max-height: 500px;
+  width: 100vw;
+  object-fit: cover;
+}
+
 .banner-img {
   height: 100%;
 }
+
+
+@media only screen and (max-width: 992px){
+  .home-banner {
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(150, 150, 150, 0.30), rgba(100, 100, 100, 0.30)), url('https://res.cloudinary.com/dxiatpprs/image/upload/v1622121292/v77nvxw2bhn50gd87syqizbdilem.png');
+      h2 {
+        color: white;
+        font-weight: bold;
+      }
+      h1 {
+        text-shadow: 1px 1px rgba(240,240,240,0.9);
+        font-size: 46px;
+      }
+      .btn {
+      background-color: #ed9327 !important;
+      color: white !important;
+    }
+  }
+  .home-banner-img {
+    display: none;
+  }
+}
+
